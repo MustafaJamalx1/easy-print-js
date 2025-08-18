@@ -25,7 +25,7 @@ export function injectContentToPrint(
   container: HTMLElement,
   content: HTMLElement
 ): void {
-  container.appendChild(content);
+  container.appendChild(content.cloneNode(true));
 }
 
 export function waitForRender(timeout: number = 50): Promise<void> {
@@ -84,7 +84,7 @@ function createSectionForBaseTable(
   const tr = document.createElement("tr");
   const th = document.createElement("th");
 
-  th.appendChild(content);
+  th.appendChild(content.cloneNode(true));
   tr.appendChild(th);
   section.appendChild(tr);
 
