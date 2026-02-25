@@ -25,7 +25,7 @@ export function injectContentToPrint(
   container: HTMLElement,
   content: HTMLElement
 ): void {
-  container.appendChild(content.cloneNode(true));
+  container.appendChild(content);
 }
 
 export function waitForRender(timeout: number = 50): Promise<void> {
